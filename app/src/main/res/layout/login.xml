@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.login.LoginActivity">
+
+    <data class="ActivityLoginBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="loginViewModel"
+            type="com.softvision.themoviedb.ui.login.LoginViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+
+            android:id="@+id/activityMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_design">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_80"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_80"
+                app:cardCornerRadius="@dimen/dp_7"
+                app:cardElevation="@dimen/dp_22">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/dp_20"
+                    android:padding="@dimen/dp_20"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/app_icon"
+                    android:visibility="visible" />
+          <!--      <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:layout_margin="@dimen/dp_20"
+                    android:padding="@dimen/dp_20"
+                    android:layout_gravity="center|top"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/progress"
+                    app:cpb_background_progressbar_color="#FFCDD2"
+                    app:cpb_background_progressbar_width="5dp"
+                    app:cpb_progressbar_color="#F44336"
+                    app:cpb_progressbar_width="10dp" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_20"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/etUserName"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/droid_serif"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/username"
+                            android:inputType="textAutoComplete"
+                            android:maxLength="50"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:textColor="@color/black_effective"
+                            android:textSize="@dimen/sp_18" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:textColorHint="@color/gray"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        app:passwordToggleEnabled="true">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/etPassword"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_30"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/droid_serif"
+                            android:gravity="center|left|bottom"
+                            android:inputType="textPassword"
+                            android:maxLength="50"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:textColor="@color/black_effective"
+                            android:textSize="@dimen/sp_18" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnServerLogin"
+                        style="@style/Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/dp_15"
+                        android:fontFamily="@font/droid_serif"
+                        android:onClick="@{() -> loginViewModel.doLogin()}"
+                        android:padding="@dimen/dp_10"
+                        android:text="@string/login"
+                        android:textSize="18dp" />
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+        <android.support.v4.widget.ContentLoadingProgressBar
+            android:id="@+id/address_looking_up"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{loginViewModel.isLoading?View.VISIBLE:View.GONE}"
+             />
+
+    </FrameLayout>
+
+</layout>
