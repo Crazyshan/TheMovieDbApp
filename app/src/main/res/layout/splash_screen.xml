@@ -7,75 +7,30 @@
 
         <variable
             name="splashview"
-            type="com.softvision.themoviedb.ui.splash.SplashViewModel" />
+            type="com.softvision.targetdeals.ui.splash.SplashViewModel" />
 
     </data>
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
        >
 
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gif_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_20"
-            android:adjustViewBounds="true"
-            android:cropToPadding="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/app_icon"
-            android:visibility="visible" />
-
-        <RelativeLayout
+        <TextView
+            android:id="@+id/btnServerLogin"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-           >
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                >
-
-                <!--  <com.sdsmdg.harjot.longshadows.LongShadowsWrapper
-                      xmlns:android="http://schemas.android.com/apk/res/android"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      >
-
-                      <com.sdsmdg.harjot.longshadows.LongShadowsTextView
-                          android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:gravity="center"
-                          android:paddingBottom="@dimen/dp_20"
-                          android:paddingTop="@dimen/dp_20"
-                          android:text="@string/splash_screen_txt"
-                          android:textColor="@color/darksalmon"
-                          android:textSize="@dimen/sp_50"
-                          app:shadow_length="100" />
-
-                  </com.sdsmdg.harjot.longshadows.LongShadowsWrapper>-->
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/droid_serif"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="@string/app_name"
+            android:textSize="18dp" />
 
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.1"
-                    android:background="@drawable/movie_review_bg"
-                    >
-
-                </RelativeLayout>
 
 
-            </FrameLayout>
-        </RelativeLayout>
-
-
-    </FrameLayout>
+    </RelativeLayout>
 
 </layout>
 
